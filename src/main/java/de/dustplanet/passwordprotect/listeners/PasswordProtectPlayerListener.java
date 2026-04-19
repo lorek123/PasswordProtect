@@ -70,8 +70,8 @@ public class PasswordProtectPlayerListener implements Listener {
             if (player.hasPotionEffect(PotionEffectType.BLINDNESS)) {
                 player.removePotionEffect(PotionEffectType.BLINDNESS);
             }
-            if (player.hasPotionEffect(PotionEffectType.SLOW)) {
-                player.removePotionEffect(PotionEffectType.SLOW);
+            if (player.hasPotionEffect(PotionEffectType.SLOWNESS)) {
+                player.removePotionEffect(PotionEffectType.SLOWNESS);
             }
         }
     }
@@ -90,9 +90,9 @@ public class PasswordProtectPlayerListener implements Listener {
                 player.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, (int) (TICKS_PER_SECOND * TimeUnit.DAYS.toSeconds(1L)),
                         POTION_AMPLIFIER));
             }
-            if (!player.hasPotionEffect(PotionEffectType.SLOW) && plugin.getConfig().getBoolean("slowness", true)) {
+            if (!player.hasPotionEffect(PotionEffectType.SLOWNESS) && plugin.getConfig().getBoolean("slowness", true)) {
                 player.addPotionEffect(
-                        new PotionEffect(PotionEffectType.SLOW, (int) (TICKS_PER_SECOND * TimeUnit.DAYS.toSeconds(1L)), POTION_AMPLIFIER));
+                        new PotionEffect(PotionEffectType.SLOWNESS, (int) (TICKS_PER_SECOND * TimeUnit.DAYS.toSeconds(1L)), POTION_AMPLIFIER));
             }
             jailHelper.stayInJail(player);
         }
@@ -232,8 +232,8 @@ public class PasswordProtectPlayerListener implements Listener {
         if (player.hasPotionEffect(PotionEffectType.BLINDNESS)) {
             player.removePotionEffect(PotionEffectType.BLINDNESS);
         }
-        if (player.hasPotionEffect(PotionEffectType.SLOW)) {
-            player.removePotionEffect(PotionEffectType.SLOW);
+        if (player.hasPotionEffect(PotionEffectType.SLOWNESS)) {
+            player.removePotionEffect(PotionEffectType.SLOWNESS);
         }
         if (plugin.getConfig().getBoolean("broadcast.kick", true)) {
             messageLocalization = ChatColor.translateAlternateColorCodes('&', plugin.getLocalization().getString("kick_broadcast"));
@@ -248,8 +248,8 @@ public class PasswordProtectPlayerListener implements Listener {
         if (player.hasPotionEffect(PotionEffectType.BLINDNESS)) {
             player.removePotionEffect(PotionEffectType.BLINDNESS);
         }
-        if (player.hasPotionEffect(PotionEffectType.SLOW)) {
-            player.removePotionEffect(PotionEffectType.SLOW);
+        if (player.hasPotionEffect(PotionEffectType.SLOWNESS)) {
+            player.removePotionEffect(PotionEffectType.SLOWNESS);
         }
         if (player.getGameMode() == GameMode.CREATIVE) {
             player.setAllowFlight(true);

@@ -163,7 +163,7 @@ public class JailHelper {
                 player.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, TWENTY_FOUR_HOURS_IN_TICKS, DARKNESS_AMPLIFIER));
             }
             if (plugin.getConfig().getBoolean("slowness", true)) {
-                player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, TWENTY_FOUR_HOURS_IN_TICKS, SLOWNESS_AMPLIFIER));
+                player.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, TWENTY_FOUR_HOURS_IN_TICKS, SLOWNESS_AMPLIFIER));
             }
 
             utils.sendPasswordRequiredMessage(player);

@@ -1,11 +1,11 @@
 name: PasswordProtect
 main: de.dustplanet.passwordprotect.PasswordProtect
 description: Force a password to play on the server
-version: ${project.version}${build.number}
+version: ${project.version}
 author: xGhOsTkiLLeRx
 authors: [DisabledHamster]
 website: https://dev.bukkit.org/projects/passwordprotect
-api-version: 1.13
+api-version: '1.21'
 commands:
   login:
     description: Login using this server's password
@@ -13,12 +13,18 @@ commands:
   setjaillocation:
     description: Set the password jail to your current location
     aliases: [setjail, setjailarea, setpasswordjail]
-    usage: /<command>
+    usage: /<command> [radius]
   setpassword:
     description: Set the password required for non-ops to play on this server
     usage: /<command> password
   password:
-    description: Get the password
+    description: Get the password (requires cleanPassword=true in config)
+    usage: /<command>
+  ppstatus:
+    description: Show PasswordProtect status (jailed players, hash algorithm)
+    usage: /<command>
+  ppreload:
+    description: Reload PasswordProtect config without restarting
     usage: /<command>
 permissions:
   passwordprotect.*:
@@ -27,6 +33,7 @@ permissions:
       passwordprotect.getpassword: true
       passwordprotect.setpassword: true
       passwordprotect.setjailarea: true
+      passwordprotect.admin: true
   passwordprotect.nopassword:
     description: Allows you to bypass login
     default: false
@@ -38,4 +45,7 @@ permissions:
     default: op
   passwordprotect.setjailarea:
     description: Allows you to set the jail area
+    default: op
+  passwordprotect.admin:
+    description: Allows use of /ppstatus and /ppreload
     default: op
